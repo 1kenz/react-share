@@ -10,10 +10,10 @@ function App() {
       <Signup />
       {/* 
   
-  //TODO:Route
-  //TODO:Signin
-  //TODO:Signup
-  //TODO:forgotpassword
+  //Route
+  //Signin
+  //Signup
+  //forgotpassword
   //....
   */}
     </div>
