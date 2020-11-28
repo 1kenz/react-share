@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from "react";
+import React, { useContext, useCallback, useMemo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -33,9 +33,17 @@ export default function Navbar() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const bigData = useMemo(
+    () => ({
+      a: "a",
+      b: "b",
+    }),
+    []
+  );
+
+  const handleClose = useCallback(() => {
     setAnchorEl(null);
-  };
+  }, []);
 
   const handleSignOut = useCallback(() => {
     firebase.signOut();
@@ -56,7 +64,7 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             React Share
           </Typography>
-          {auth && (
+          {currentUser && (
             <div>
               <IconButton
                 aria-label="account of current user"
@@ -89,6 +97,9 @@ export default function Navbar() {
               </Menu>
             </div>
           )}
+          {/* 
+          //TODO: login & Register Links
+          */}
         </Toolbar>
       </AppBar>
     </div>
