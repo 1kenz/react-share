@@ -6,7 +6,7 @@ import MediaCard from "../components/MediaCard";
 
 const stylesFunc = makeStyles((theme) => ({
   wrapper: {
-    marginTop: "10rem",
+    marginTop: "5rem",
     height: "calc(100vh - 19.0625rem)",
     textAlign: "center",
   },
@@ -39,7 +39,7 @@ function Main() {
       <Grid container spacing={1}>
         {userList?.map((user) => {
           return (
-            <Grid item sm={4} xs={6} key={user?.id}>
+            <Grid item sm={6} xs={6} key={user?.id}>
               <MediaCard
                 id={user.id}
                 userImage={user?.picture}
