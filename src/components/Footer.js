@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   footer: {
+    display: "flex",
+    flexDirection: "column",
+    position: "fixed",
+    bottom: "0",
     padding: theme.spacing(3, 2),
     marginTop: "auto",
     backgroundColor:
@@ -36,7 +40,7 @@ export default function StickyFooter() {
   const classes = useStyles();
 
   return (
-    <div id="footer" className="footer">
+    <div id="footer">
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Typography variant="body1">Address Virginia, USA.</Typography>
